@@ -18,7 +18,9 @@ public class Q04 {
 		String a = scanner.next();
 		String b = scanner.next();
 		scanner.close();
-		System.out.print(Integer.parseInt(a) * Integer.parseInt(b));
+		if (Integer.parseInt(a) > 0 && Integer.parseInt(b) < 10) {
+			System.out.print(Integer.parseInt(a) * Integer.parseInt(b));
+		}
 	}
 
 }
