@@ -16,15 +16,15 @@ public class OvenWatch {
 		int needTime = needT/60;
 		int needMinute = needT%60;
 		
-		if (needMinute >= 60) {
-			needTime = needTime + (needT/60);
-			needMinute = (needT/60)%60;
-		}
+//		if (needMinute >= 60) {
+//			needTime = needTime + (needT/60);
+//			needMinute = (needT/60)%60;
+//		}
 		
 		int resultTime = 0;
 		int resultMinute = 0;
 		
-		if (nowTime + needTime == 24) {
+		if (nowTime + needTime == 24) { // >=
 			resultTime = 0;
 			resultMinute = nowMinute + needMinute;
 		} else if (nowTime + needTime > 24) {
