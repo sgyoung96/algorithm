@@ -25,63 +25,28 @@ public class Main {
 		if (nowTime + needTime == 24) {
 			resultTime = 0;
 			resultMinute = nowMinute + needMinute;
-			
-			if (resultMinute >= 60) {
-				resultTime = resultTime + (nowMinute + needMinute) / 60;
-				resultMinute = (resultMinute%60) % 60;
-				
-				if (resultTime == 24) {
-					resultTime = 0;
-				} else if (resultTime > 24) {
-					resultTime = resultTime - 24;
-				}
-				
-				if (resultMinute == 60) {
-					resultMinute = 0;
-				} else if (resultMinute > 60) {
-					resultMinute = (resultMinute%60) % 60;
-				}
-			}
 		} else if (nowTime + needTime > 24) {
 			resultTime = (nowTime + needTime) - 24;
 			resultMinute = nowMinute + needMinute;
-			
-			if (resultMinute >= 60) {
-				resultTime = resultTime + ((nowMinute + needMinute) / 60);
-				resultMinute = (resultMinute%60) % 60;
-				
-				if (resultTime == 24) {
-					resultTime = 0;
-				} else if (resultTime > 24) {
-					resultTime = resultTime - 24;
-				}
-				
-				if (resultMinute == 60) {
-					resultMinute = 0;
-				} else if (resultMinute > 60) {
-					resultMinute = (resultMinute%60) % 60;
-				}
-			}
 		} else if (nowTime + needTime < 24) {
 			resultTime = nowTime + needTime;
 			resultMinute = nowMinute + needMinute;
+		}
+		
+		if (resultMinute >= 60) {
+			resultTime = resultTime + (nowMinute + needMinute) / 60;
+			resultMinute = (resultMinute%60) % 60;
 			
-			if (resultMinute >= 60) {
-				resultTime = resultTime + (nowMinute + needMinute) / 60;
+			if (resultTime == 24) {
+				resultTime = 0;
+			} else if (resultTime > 24) {
+				resultTime = resultTime - 24;
+			}
+			
+			if (resultMinute == 60) {
+				resultMinute = 0;
+			} else if (resultMinute > 60) {
 				resultMinute = (resultMinute%60) % 60;
-
-				if (resultTime == 24) {
-					resultTime = 0;
-				} else if (resultTime > 24) {
-					resultTime = resultTime - 24;
-				}
-				
-				if (resultMinute == 60) {
-					resultMinute = 0;
-				} else if (resultMinute > 60) {
-					resultMinute = (resultMinute%60) % 60;
-
-				}
 			}
 		}
 		
